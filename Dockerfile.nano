@@ -1,0 +1,10 @@
+# docker build --rm -f "Dockerfile.nano" -t paulgilchrist/node-nano-web-server:latest .
+# docker run -d -p 80:3000 paulgilchrist/node-nano-web-server
+# docker rm -f <containerID>
+FROM paulgilchrist/node-nano
+COPY package.json /usr/src/app/package.json
+COPY index.js /usr/src/app/index.js
+COPY web.config /usr/src/app/web.config
+WORKDIR /usr/src/app
+RUN npm install
+# docker push paulgilchrist/node-nano-web-server

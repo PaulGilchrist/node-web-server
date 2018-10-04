@@ -13,3 +13,5 @@ WORKDIR /usr/src/app
 EXPOSE 3000
 CMD [ "node", "index.js" ]
 ```
+
+If using Docker, there are two files to support either Linux (```Dockerfile``` to build ```node-web-server```) or Windows (Dockerfile.node to build ```node-nano-web-server```).  Make sure to build your Angular container from the appropriate parent container based on which operating system you would like to use for hosting the web server.  
